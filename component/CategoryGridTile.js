@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		margin: 16,
 		height: 150,
-		borderRadius: 32,
+		borderRadius: 16,
 		elevation: 6,
 		backgroundColor: 'white',
 		shadowColor: 'black',
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 		padding: 16,
 		justifyContent: 'center',
 		alignItems: 'center',
-		borderRadius: 32,
+		borderRadius: 16,
 	},
 	title: {
 		fontWeight: 'bold',

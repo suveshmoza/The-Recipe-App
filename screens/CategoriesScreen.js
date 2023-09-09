@@ -5,7 +5,9 @@ import CategoryGridTitle from '../component/CategoryGridTile';
 const CategoriesScreen = ({ navigation }) => {
 	const renderCategory = (itemData) => {
 		const onPressHandler = () => {
-			navigation.navigate('Meal Overview');
+			navigation.navigate('MealOverview', {
+				categoryId: itemData.item.id,
+			});
 		};
 
 		return (
@@ -23,6 +25,8 @@ const CategoriesScreen = ({ navigation }) => {
 			keyExtractor={(item) => item.id}
 			renderItem={renderCategory}
 			numColumns={2}
+			showsVerticalScrollIndicator={false}
+			showsHorizontalScrollIndicator={false}
 		/>
 	);
 };
