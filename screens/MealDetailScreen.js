@@ -1,14 +1,40 @@
-import React from 'react';
-import { ScrollView, View, Text, Image, StyleSheet } from 'react-native';
+import { useLayoutEffect } from 'react';
+import {
+	ScrollView,
+	View,
+	Text,
+	Image,
+	StyleSheet,
+	Button,
+} from 'react-native';
 import MealItemDetails from '../component/MealItemDetails';
 import { MEALS } from '../data/dummy-data';
 import Subtitle from '../component/MealDetail/Subtitle';
 import List from '../component/MealDetail/List';
 import GridList from '../component/MealDetail/GridList';
+import IconButton from '../component/IconButton';
 
 const MealDetailScreen = ({ route, navigation }) => {
 	const mealId = route.params.mealId;
 	const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+
+	const headerButton = () => {
+		console.log('pressed');
+	};
+
+	useLayoutEffect(() => {
+		navigation.setOptions({
+			headerRight: () => {
+				return (
+					<IconButton
+						icon="star-outline"
+						onPress={headerButton}
+						color="black"
+					/>
+				);
+			},
+		});
+	}, [navigation, headerButton]);
 
 	return (
 		<ScrollView style={styles.rootContainer}>
@@ -34,6 +60,8 @@ const MealDetailScreen = ({ route, navigation }) => {
 		</ScrollView>
 	);
 };
+
+export default MealDetailScreen;
 
 const styles = StyleSheet.create({
 	rootContainer: {
@@ -71,5 +99,3 @@ const styles = StyleSheet.create({
 		color: '#333333',
 	},
 });
-
-export default MealDetailScreen;
