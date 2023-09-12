@@ -6,6 +6,9 @@ TheRecipeApp is a React Native application created as a part of the learning jou
 
 # Demo
 
+https://github.com/suveshmoza/The-Recipe-App/assets/56023604/9eadc6f3-22ce-46e4-85aa-febdce5fdb64
+
+
 
 # Getting Started
 To get started with TheRecipeApp, follow these simple steps:
